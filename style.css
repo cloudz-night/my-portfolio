@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* colors */
+:root {
+    --primary: #b197dd;
+    --secondary: #493a61;
+    --accent: #6bb4a8;
+    --background: #1A1224;
+    --dark-bg: #11091B;
+    --text: #e8e0f5;
+    --yellow: #95813B;
+    --purple: #73377A;
+    --green: #4a7c6d;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0px;
+    background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6, p, li, td, th {
+    color: var(--text);
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding: 2em;
+    gap: 2em;
+    background-color: var(--dark-bg);
+    border-bottom: 0.25em solid var(--secondary);
+}
+
+.content {
+    margin: 2em auto;
+    margin-bottom: 3em;
+    width: 80%;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+#projects-table {
+    width: 100%;
+    border: var(--secondary) solid 0.2em;
+}
+
+#projects-table th, #projects-table td {
+    padding: 0.5em;
+    text-align: left;
+    border: var(--secondary) solid 0.1em;
+}
+
+#projects-table th {
+    background-color: var(--secondary);
+    color: var(--text);
+}
+
+#hobbies-table {
+    width: 100%;
+    border: var(--secondary) solid 0.2em;
+}
+
+#hobbies-table th, #hobbies-table td {
+    padding: 0.5em;
+    text-align: left;
+    border: var(--secondary) solid 0.1em;
+}
+
+#hobbies-table th {
+    background-color: var(--secondary);
+    color: var(--text);
+}
+
+.footer {
+    margin-bottom: -100%;
+}
+
+@media screen and (max-width: 790px) {
+    .top {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        width: 95%;
+    }
+
+    #projects-table, #hobbies-table {
+        width: 100%;
+    }
+
+}
