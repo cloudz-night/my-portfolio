@@ -2,4 +2,4 @@
 
 my portfolio / about me
 
-[link(https://sakif-portfolio.netlify.app)]
+[link to website (https://sakif-portfolio.netlify.app)]
