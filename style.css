@@ -13,13 +13,17 @@
     --green: #4a7c6d;
 }
 
-body {
+html {
+    scroll-behavior: smooth;
+}
+
+body, button {
     font-family: 'JetBrains Mono', monospace;
     margin: 0px;
     background-color: var(--background);
 }
 
-h1, h2, h3, h4, h5, h6, p, li, td, th {
+h1, h2, h3, h4, h5, h6, p, li, td, th, a {
     color: var(--text);
 }
 
@@ -47,12 +51,14 @@ li {
 #projects-table {
     width: 100%;
     border: var(--secondary) solid 0.2em;
+    border-collapse: collapse;
 }
 
 #projects-table th, #projects-table td {
     padding: 0.5em;
     text-align: left;
     border: var(--secondary) solid 0.1em;
+    border-collapse: collapse;
 }
 
 #projects-table th {
@@ -63,26 +69,91 @@ li {
 #hobbies-table {
     width: 100%;
     border: var(--secondary) solid 0.2em;
+    border-collapse: collapse;
 }
 
 #hobbies-table th, #hobbies-table td {
     padding: 0.5em;
     text-align: left;
     border: var(--secondary) solid 0.1em;
+    border-collapse: collapse;
 }
 
 #hobbies-table th {
     background-color: var(--secondary);
     color: var(--text);
+    border-collapse: collapse;
 }
 
 .footer {
     margin-bottom: -100%;
 }
 
+button, a {
+    background-color: var(--secondary);
+    text-decoration: none;
+    color: var(--text);
+    border: solid 0.1em var(--primary);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+#closeSkillsBtn {
+    z-index: 1001;
+    position: inherit;
+    left: 23em;
+    top: 1.5em;
+}
+
+button:hover, a:hover {
+    transform: rotate(5deg);
+    transition: transform 0.1s ease-in-out;
+}
+
+#skillsBtn:hover {
+    transform: rotate(2deg);
+}
+
+.projLink {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: var(--accent);
+}
+
+#skills-pane {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(0px);
+    background: transparent;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.3s;
+    pointer-events: none;
+}
+
+#skills-content {
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark-bg);
+    padding: 4em;
+    border: 0.5em solid var(--secondary);
+    width: 15em;
+    height: 20em;
+    transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.3s;
+}
+
+/* -- small version -- */
+
 @media screen and (max-width: 790px) {
     .top {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
     }
